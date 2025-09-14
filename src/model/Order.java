@@ -9,18 +9,17 @@ public class Order {
     private List<Product> products=new ArrayList<>();
     private LocalDate ord_date;
 
+    public Order(int ord_id,LocalDate ord_date){
+        this.ord_id=ord_id;
+        this.ord_date=ord_date;
+    }
+
     public LocalDate getOrd_date() {
         return ord_date;
     }
 
     public void setOrd_date(LocalDate ord_date) {
         this.ord_date = ord_date;
-    }
-
-
-    public Order(int ord_id,LocalDate ord_date){
-        this.ord_id=ord_id;
-        this.ord_date=ord_date;
     }
 
     public int getOrd_id() {
@@ -41,17 +40,13 @@ public class Order {
     }
 
     public double TotalCost(){
-        double totalCost=0; //valor 0,00 por default
-
+        double totalCost=0; //value 0,00 by default
 
         for(int i=0;i<products.size();i++){
             totalCost+= products.get(i).getPro_price();
         }
         return totalCost;
     }
-
-
-    
 
     public void ShowOrder(){
         System.out.println("\nFarmaTodo Order /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");

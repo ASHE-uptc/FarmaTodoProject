@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 
-public class ProductLoader{
+public class FilesLoader{
 
         public static List<Product> LoadProducts(String pathFile){
             List<Product> products=new ArrayList<>();

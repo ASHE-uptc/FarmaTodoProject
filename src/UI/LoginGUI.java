@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import java.util.List;
 import model.Druggist;
-import model.ProductLoader;
+import model.FilesLoader;
 
 
 public class LoginGUI{
@@ -19,7 +19,7 @@ public class LoginGUI{
         while (!logged) {
             
             //Load Druggists
-            List<Druggist> druggList=ProductLoader.LoadDruggists("src/druggistList.txt");
+            List<Druggist> druggList=FilesLoader.LoadDruggists("src/druggistList.txt");
 
             //Ask User
             String log_user=JOptionPane.showInputDialog(null, "Enter username:", "Login", JOptionPane.QUESTION_MESSAGE);
