@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 public class MainMenuGUI extends JFrame{
 
     public MainMenuGUI(){
-        setSize(800, 200);
+        setSize(400, 600);
         setBackground(Color.cyan);
         setTitle("Main Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

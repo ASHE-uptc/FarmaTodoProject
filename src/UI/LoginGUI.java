@@ -6,12 +6,8 @@ import model.Druggist;
 
 
 public class LoginGUI extends JFrame {
-
-    
-
     public static void main(String[] args) {
-        String trueLog_user="user";
-        String trueLog_password="1234";
+        Druggist druggist_1=new Druggist("Axel", 'T', "1057980717", "user", "1234");
 
         boolean logged=false;
 
@@ -29,15 +25,14 @@ public class LoginGUI extends JFrame {
 
             if (option!=JOptionPane.OK_OPTION) {
                 System.exit(0);
-            }   
+            }
 
             String pass=new String(pf.getPassword());
 
             //Validate
-            if (log_user.equals(trueLog_user)&&pass.equals(trueLog_password)) {
+            if (log_user.equals(druggist_1.getDruggist_user())&&pass.equals(druggist_1.getDruggist_password())) {
                 JOptionPane.showMessageDialog(null, "Log in successful!", "Welcome", JOptionPane.INFORMATION_MESSAGE);
                 logged=true;
-            
 
             SwingUtilities.invokeLater(() -> { //Shows catalog
                     new UI.MainMenuGUI().setVisible(true);
@@ -45,7 +40,6 @@ public class LoginGUI extends JFrame {
             }else{ 
                 JOptionPane.showMessageDialog(null, "Invalid Credentials", "error", JOptionPane.ERROR_MESSAGE);
             }
-         
         }
     }
 }

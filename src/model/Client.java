@@ -15,6 +15,4 @@ public class Client extends Person {
     public void setPro_amount(int pro_amount) {
         this.pro_amount = pro_amount;
     }
-
-    
 }

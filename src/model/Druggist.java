@@ -1,14 +1,16 @@
 package model;
 
 public class Druggist extends Person{
-    String druggist_user="user";
-    String druggist_password="1234";
+    
+    private String druggist_user="user";
+    private String druggist_password="1234m";
 
     public Druggist(String name, char doc_type, String doc_num, String druggist_user, String druggist_password) {
         super(name, doc_type, doc_num);
         this.druggist_user = druggist_user;
         this.druggist_password = druggist_password;
     }
+    
     public String getDruggist_user() {
         return druggist_user;
     }
