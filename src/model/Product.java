@@ -58,9 +58,6 @@ public class Product {
         this.pro_stock=pro_stock;
     }
 
-
-    
-
     @Override
     public String toString() {
         return "Product [pro_name=" + pro_name + ", pro_id=" + pro_id + ", pro_price=" + pro_price + "Stock= "+pro_stock+", pro_expirarion="+ pro_expirarion + "]";

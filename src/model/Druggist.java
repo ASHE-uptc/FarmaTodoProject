@@ -23,4 +23,13 @@ public class Druggist extends Person{
     public void setDruggist_password(String druggist_password) {
         this.druggist_password = druggist_password;
     }
+
+    @Override
+    public String toString() {
+        return "Name :"+getName()+" \n "+ "Doc type: "+getDoc_type()+" \n "+"Doc Num: "+
+        getDoc_num()+" \n "+"User: "+getDruggist_user()+ " \n "+"Password: "+getDruggist_password()+"\n";
+    }
+
+
+    
 }
