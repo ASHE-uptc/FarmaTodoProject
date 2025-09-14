@@ -40,7 +40,6 @@ public class FarmaTodoGUI extends JFrame{
         JScrollPane scrollCatalog=new JScrollPane(productList);
 
         JButton addButton=new JButton("Add to cart");
-
         addButton.addActionListener((ActionEvent e)->{
             int selectProduct=productList.getSelectedIndex();
             if (selectProduct!=-1) {
@@ -49,6 +48,7 @@ public class FarmaTodoGUI extends JFrame{
                 cartArea.append(product.getPro_name()+ "- ($"+product.getPro_price()+") \n");
             }
         });
+
 
         JPanel leftPanel=new JPanel(new BorderLayout());
         leftPanel.add(new JLabel("Product Catalog: "),BorderLayout.NORTH);
@@ -71,6 +71,21 @@ public class FarmaTodoGUI extends JFrame{
         });
         rightPanel.add(checkoutButton,BorderLayout.SOUTH);
 
+
+        JButton backButton=new JButton("Back"); //Back Button
+        backButton.addActionListener(e->{
+            new MainMenuGUI().setVisible(true);
+            this.dispose();
+        });
+        rightPanel.add(backButton,BorderLayout.SOUTH);
+
+        //Back Panel
+        JPanel buttonsPanel=new JPanel(new FlowLayout());
+        buttonsPanel.add(checkoutButton);
+        buttonsPanel.add(backButton);    
+
+        rightPanel.add(buttonsPanel, BorderLayout.SOUTH);
+    
         //Dividir la pantalla en dos
         add(leftPanel,BorderLayout.WEST);
         add(rightPanel, BorderLayout.CENTER);

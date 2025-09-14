@@ -3,7 +3,7 @@ package model;
 public class Druggist extends Person{
     
     private String druggist_user="user";
-    private String druggist_password="1234m";
+    private String druggist_password="1234";
 
     public Druggist(String name, char doc_type, String doc_num, String druggist_user, String druggist_password) {
         super(name, doc_type, doc_num);
