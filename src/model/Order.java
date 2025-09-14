@@ -54,7 +54,7 @@ public class Order {
     
 
     public void ShowOrder(){
-        System.out.println("\nShopNow Order /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");
+        System.out.println("\nFarmaTodo Order /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");
         System.out.println("Order ID: "+ord_id+"--------------------------------------------");
         System.out.println("Order Date: "+LocalDate.now()+"\n");
 
@@ -62,8 +62,8 @@ public class Order {
 
         for(Product p: products){
             System.out.println("Product N."+counter+": ");
-            System.out.println("Name: "+p.getPro_name());
             System.out.println("Product ID: "+p.getPro_id());
+            System.out.println("Name: "+p.getPro_name());
             System.out.println("Price: "+p.getPro_price());
             System.out.println("\n");
         }

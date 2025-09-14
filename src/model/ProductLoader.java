@@ -18,9 +18,10 @@ public class ProductLoader{
                     int id=Integer.parseInt(values[0]);
                     String name=values[1];
                     double price=Double.parseDouble(values[2]);
-                    LocalDate expirDate=LocalDate.parse(values[3]);
+                    int stock=Integer.parseInt(values[3]);
+                    LocalDate expirDate=LocalDate.parse(values[4]);
 
-                    products.add(new Product(id, name, price, expirDate));
+                    products.add(new Product(id, name, price, stock, expirDate));
                 }
 
             } catch (FileNotFoundException e) {

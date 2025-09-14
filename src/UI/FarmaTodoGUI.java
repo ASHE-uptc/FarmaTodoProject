@@ -23,6 +23,7 @@ public class FarmaTodoGUI extends JFrame{
         setSize(800,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        setLocationRelativeTo(null);
 
         //Loading Products
         catalog=ProductLoader.LoadProducts("src/catalog.txt");
@@ -31,7 +32,7 @@ public class FarmaTodoGUI extends JFrame{
         //Catalog Panel
         listModel=new DefaultListModel<>();
         for (Product p : catalog) {
-            listModel.addElement(p.getPro_id()+" - "+p.getPro_name()+" - "+p.getPro_expirarion()+" - ($"+p.getPro_price()+")");
+            listModel.addElement(p.getPro_id()+" - "+p.getPro_name()+" - "+" Stock: "+p.getPro_stock()+" - "+p.getPro_expirarion()+" - ($"+p.getPro_price()+")");
         }
 
         productList=new JList<>(listModel);
@@ -45,7 +46,7 @@ public class FarmaTodoGUI extends JFrame{
             if (selectProduct!=-1) {
                 Product product=catalog.get(selectProduct);
                 order.AddProduct(product);
-                cartArea.append(product.getPro_name()+ "- ($"+product.getPro_price()+")\n");
+                cartArea.append(product.getPro_name()+ "- ($"+product.getPro_price()+") \n");
             }
         });
 
