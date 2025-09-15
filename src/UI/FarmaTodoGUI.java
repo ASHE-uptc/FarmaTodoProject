@@ -41,17 +41,24 @@ public class FarmaTodoGUI extends JFrame{
 
         JButton addButton=new JButton("Add to cart");
         addButton.addActionListener((ActionEvent e)->{
+            Product product=new Product(0, "", 0, 0, null);
             int selectProduct=productList.getSelectedIndex();
             if (selectProduct!=-1) {
-                Product product=catalog.get(selectProduct);
-                order.AddProduct(product);
-                cartArea.append(product.getPro_name()+ "- ($"+product.getPro_price()+") \n");
+                product=catalog.get(selectProduct);
+            }
+            int stock = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad que desea comprar"));
+            int option=JOptionPane.showConfirmDialog(null,"El costo de su compra es de:"+(product.getPro_price()*stock)+"\n ¿Desea confirmar?");
+            if (option==JOptionPane.YES_OPTION) {
+                    order.AddProduct(product);
+                    cartArea.append(product.getPro_name()+ "- ($"+product.getPro_price()*stock+") \n");
+            }else if (option==JOptionPane.NO_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Compra cancelada exitosamente");
             }
         });
 
 
         JPanel leftPanel=new JPanel(new BorderLayout());
-        leftPanel.add(new JLabel("Product Catalog: "),BorderLayout.NORTH);
+        leftPanel.add(new JLabel("ID-----------NAME-----------------STOCK--------------DATE---------PRICE:"),BorderLayout.NORTH);
         leftPanel.add(scrollCatalog, BorderLayout.CENTER);
         leftPanel.add(addButton, BorderLayout.SOUTH);
         

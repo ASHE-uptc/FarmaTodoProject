@@ -10,7 +10,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        List<Druggist> druggList=FilesLoader.LoadDruggists("src/druggistList.txt");
         SwingUtilities.invokeLater(()->{
             LoginGUI.startLogin();
         });
