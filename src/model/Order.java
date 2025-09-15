@@ -38,7 +38,9 @@ public class Order {
     public void AddProduct(Product newProduct){
         products.add(newProduct);
     }
-
+    public void DeleteProduct(Product deleteProduct){
+        products.remove(deleteProduct);
+    }
     public double TotalCost(){
         double totalCost=0; //value 0,00 by default
 
